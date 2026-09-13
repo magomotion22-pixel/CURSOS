@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio & Cursos | Motion Design</title>
+    <style>
+        /* CONFIGURAÇÕES GERAIS E CORES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b12;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ANIMAÇÃO DE ENTRADA SUAVE */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* HEADER / TOPO */
+        header {
+            text-align: center;
+            padding: 80px 20px 30px 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #a855f7, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #9ca3af;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* SEÇÃO DO VÍDEO COMPARTILHADO */
+        .video-section {
+            max-width: 850px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            animation: fadeInUp 1.2s ease-out;
+            text-align: center;
+        }
+
+        .video-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #c084fc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 2px solid #2d2d44;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-container:hover {
+            border-color: #6366f1;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.25);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* CONTAINER DOS CURSOS (GRID) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* CARDS DOS CURSOS COM ANIMAÇÃO HOVER */
+        .card {
+            background: #161624;
+            border: 1px solid #2d2d44;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #a855f7;
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+
+        .card .badge {
+            background: rgba(168, 85, 247, 0.15);
+            color: #c084fc;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            align-self: center;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #f3f4f6;
+        }
+
+        .card p {
+            color: #9ca3af;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* BOTÃO KIWIFY COM PULSO NEON */
+        .btn-kiwify {
+            display: inline-block;
+            background: linear-gradient(135deg, #6d28d9, #4c1d95);
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(109, 40, 217, 0.4);
+        }
+
+        .btn-kiwify:hover {
+            background: linear-gradient(135deg, #a855f7, #6d28d9);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
+            transform: scale(1.05);
+        }
+
+        /* FOOTER / RODAPÉ */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #4b5563;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>Meus Treinamentos de Motion Design</h1>
+        <p>Domine as animações que vendem e diferencie-se no mercado digital com técnicas exclusivas.</p>
+    </header>
+
+    <!-- SEÇÃO DO VÍDEO EXPLICATIVO -->
+    <section class="video-section">
+        <h3>Qual treinamento escolher? Assista o comparativo:</h3>
+        <div class="video-container">
+            <!-- IMPORTANTE: Substitua o ID final 'VIDEO_ID' pelo ID real do seu vídeo do YouTube -->
+            <iframe 
+                src="https://youtube.com" 
+                title="Master Motion Flyers vs Mago Stream Motion" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- PRODUTOS KIWIFY -->
+    <main class="container">
+
+        <!-- PRODUTO 1 -->
+        <div class="card">
+            <span class="badge">Curso Completo</span>
+            <div>
+                <h2>Master Motion Flyers</h2>
+                <p>Aprenda a criar flyers animados de alto impacto para eventos, comércios e redes sociais. Do zero ao nível profissional.</p>
+            </div>
+            <a href="#" target="_blank" class="btn-kiwify">Garantir Minha Vaga</a>
+        </div>
+
+        <!-- PRODUTO 2 -->
+        <div class="card">
+            <span class="badge">Especialização</span>
+            <div>
+                <h2>Mago Stream Motion</h2>
+                <p>Domine o mercado de overlays, telas de início e pacotes de animação completos para streamers e criadores de conteúdo.</p>
+            </div>
+            <a href="#" target="_blank" class="btn-kiwify">Garantir Minha Vaga</a>
+        </div>
+
+        <!-- PRODUTO 3 -->
+        <div class="card">
+            <span class="badge">Combo / Pack</span>
+            <div>
+                <h2>Motion Flyers Pro Pack</h2>
+                <p>Acelere seu fluxo de trabalho com um pacote massivo de templates, assets e projetos editáveis prontos para uso comercial.</p>
+            </div>
+            <a href="#" target="_blank" class="btn-kiwify">Acessar o Pack</a>
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 Todos os direitos reservados. Hospedado via GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
