@@ -415,7 +415,7 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
    ========================================================== */
 
 const PORTFOLIO = [
- {
+   {
     title: "Motion Flyer",
     type: "Instagram • Motion Flyer",
     image: "assets/portfolio-01.png",
@@ -477,8 +477,9 @@ PORTFOLIO.forEach(item => {
   el.innerHTML = `
     <div class="portfolio-cover">
       <img src="${item.image}" alt="${item.title}"
-           onerror="this.style.display='none'">
-      <div class="portfolio-placeholder">
+           onload="this.nextElementSibling.style.display='none'"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+      <div class="portfolio-placeholder" style="display:grid">
         <span>ADICIONE A CAPA<br>DO SEU REEL</span>
       </div>
       <div class="play">▶</div>
