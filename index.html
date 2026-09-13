@@ -83,8 +83,8 @@ h1{font-size:clamp(3rem,7vw,6.3rem);line-height:.92;letter-spacing:-.07em;margin
 }
 .btn-primary{background:linear-gradient(135deg,var(--purple),var(--violet));box-shadow:0 12px 35px rgba(109,53,255,.30)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(109,53,255,.45)}
-.btn-ghost{background:rgba(255,255,255,.04)}
-.btn-ghost:hover{background:rgba(255,255,255,.08);transform:translateY(-3px)}
+.btn-ghost{background:linear-gradient(135deg,rgba(155,92,255,.22),rgba(50,216,255,.10));color:#fff;border-color:rgba(181,140,255,.45);text-shadow:0 1px 2px rgba(0,0,0,.45)}
+.btn-ghost:hover{background:linear-gradient(135deg,rgba(155,92,255,.38),rgba(50,216,255,.18));color:#fff;transform:translateY(-3px)}
 .hero-art{
   position:relative;border:1px solid var(--line);border-radius:30px;padding:10px;
   background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025));
@@ -141,7 +141,7 @@ h2{font-size:clamp(2.1rem,4vw,3.6rem);letter-spacing:-.055em;margin-top:9px}
 .portfolio-cover{aspect-ratio:9/12;position:relative;display:grid;place-items:center;overflow:hidden}
 .portfolio-cover img{width:100%;height:100%;object-fit:cover}
 .portfolio-placeholder{
-  position:absolute;inset:0;display:none;place-items:center;
+  position:absolute;inset:0;display:grid;place-items:center;
   background:
     radial-gradient(circle at 30% 25%,rgba(155,92,255,.5),transparent 30%),
     radial-gradient(circle at 70% 70%,rgba(50,216,255,.3),transparent 30%),
@@ -295,12 +295,12 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
       <article class="card reveal">
         <div class="card-image">
           <img src="assets/master-motion-flyers.png" alt="Master Motion Flyers"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+               onerror="this.style.display='none'">
           <span class="badge">Curso completo</span>
         </div>
         <div class="card-body">
           <h3>Master Motion Flyers</h3>
-          <p>Aprenda a criar flyers animados de alto impacto para eventos, comércios e redes sociais, do zero ao nível profissional.</p>
+          <p>Aprenda a criar flyers animados de alto impacto para eventos, comércios e redes sociais, do zero ao nível profissional. <strong>Acesso vitalício.</strong></p>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
             <a class="btn btn-primary small" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/yzulT7F">Quero entrar</a>
@@ -311,15 +311,15 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
       <article class="card reveal">
         <div class="card-image">
           <img src="assets/mago-stream-motion.png" alt="Mago Stream Motion"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+               onerror="this.style.display='none'">
           <span class="badge">Especialização</span>
         </div>
         <div class="card-body">
           <h3>Mago Stream Motion</h3>
-          <p>Domine overlays, telas de início, cenas e pacotes de animação para streamers e criadores de conteúdo.</p>
+          <p>Domine overlays, telas de início, cenas e pacotes de animação para streamers e criadores de conteúdo. <strong>Acesso vitalício.</strong></p>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
-            <a class="btn btn-primary small" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/h9bPpUc">Quero entrar</a>
+            <a class="btn btn-primary small" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/4E31Dej">Quero entrar</a>
           </div>
         </div>
       </article>
@@ -327,12 +327,12 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
       <article class="card reveal">
         <div class="card-image">
           <img src="assets/motion-flyer-pro-pack.png" alt="Motion Flyer Pro Pack"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+               onerror="this.style.display='none'">
           <span class="badge">Combo / Pack</span>
         </div>
         <div class="card-body">
           <h3>Motion Flyer Pro Pack</h3>
-          <p>Acelere seu fluxo de trabalho com templates, assets e projetos editáveis para produzir com mais velocidade.</p>
+          <p>Acelere seu fluxo de trabalho com templates, assets e projetos editáveis para produzir com mais velocidade. <strong>Acesso vitalício.</strong></p>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
             <a class="btn btn-primary small" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/ohfemTd">Acessar pack</a>
@@ -416,52 +416,28 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
 
 const PORTFOLIO = [
   {
-    title: "Motion Flyer",
+    title: "Motion Flyer — Trabalho 01",
     type: "Instagram • Motion Flyer",
-    image: "assets/portfolio-01.png",
-    instagramUrl: "https://www.instagram.com/reel/DVMK8q0FN3t/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    image: "assets/portfolio-01.jpg",
+    instagramUrl: "https://www.instagram.com/"
   },
   {
-    title: "Stream Motion",
+    title: "Stream Motion — Trabalho 02",
     type: "Instagram • Stream Pack",
-    image: "assets/portfolio-02.png",
-    instagramUrl: "https://www.instagram.com/p/DdE2w-JEZF9/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    image: "assets/portfolio-02.jpg",
+    instagramUrl: "https://www.instagram.com/"
   },
   {
-    title: "Motion Flyer",
+    title: "Motion Flyer — Trabalho 03",
     type: "Instagram • Motion Flyer",
-    image: "assets/portfolio-03.png",
-    instagramUrl: "https://www.instagram.com/reel/DWURQrwhOr7/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    image: "assets/portfolio-03.jpg",
+    instagramUrl: "https://www.instagram.com/"
   },
   {
-    title: "Stream Motion",
+    title: "Stream Motion — Trabalho 04",
     type: "Instagram • Stream Pack",
-    image: "assets/portfolio-04.png",
-    instagramUrl: "https://www.instagram.com/p/Dcy1PJOEc2R/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
-  },
-  {
-    title: "Motion Flyer",
-    type: "Instagram • Motion Flyer",
-    image: "assets/portfolio-05.png",
-    instagramUrl: "https://www.instagram.com/reel/DUoH31wkcqd/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
-  },
-  {
-    title: "Stream Motion",
-    type: "Instagram • Stream Pack",
-    image: "assets/portfolio-06.png",
-    instagramUrl: "https://www.instagram.com/p/DbGrw22lSOy/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
-  },
-  {
-    title: "Motion Flyer",
-    type: "Instagram • Motion Flyer",
-    image: "assets/portfolio-07.png",
-    instagramUrl: "https://www.instagram.com/reel/DVwOFDJFAqb/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
-  },
-  {
-    title: "Stream Motion",
-    type: "Instagram • Stream Pack",
-    image: "assets/portfolio-08.png",
-    instagramUrl: "https://www.instagram.com/p/DbZB7IMlRCC/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA=="
+    image: "assets/portfolio-04.jpg",
+    instagramUrl: "https://www.instagram.com/"
   }
 ];
 
@@ -477,7 +453,7 @@ PORTFOLIO.forEach(item => {
   el.innerHTML = `
     <div class="portfolio-cover">
       <img src="${item.image}" alt="${item.title}"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+           onerror="this.style.display='none'">
       <div class="portfolio-placeholder">
         <span>ADICIONE A CAPA<br>DO SEU REEL</span>
       </div>
