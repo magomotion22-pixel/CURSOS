@@ -322,7 +322,7 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
           <p>Aprenda a criar Motion Flyers profissionais para eventos, lançamentos de músicas e divulgação de artistas. <strong>Acesso vitalício.</strong></p>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
-            <a class="btn btn-primary small" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/yzulT7F">Quero entrar</a>
+            <a class="btn btn-primary small js-curso-link" data-curso="Master Motion Flyers" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/yzulT7F">Quero entrar</a>
           </div>
         </div>
       </article>
@@ -338,7 +338,7 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
           <p>Domine overlays, telas de início, cenas e pacotes de animação para streamers e criadores de conteúdo. <strong>Acesso vitalício.</strong></p>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
-            <a class="btn btn-primary small" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/4E31Dej">Quero entrar</a>
+            <a class="btn btn-primary small js-curso-link" data-curso="Mago Stream Motion" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/4E31Dej">Quero entrar</a>
           </div>
         </div>
       </article>
@@ -354,7 +354,7 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
           <p>Acelere seu fluxo de trabalho com templates, assets e projetos editáveis para produzir com mais velocidade. <strong>Acesso vitalício.</strong></p>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
-            <a class="btn btn-primary small" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/ohfemTd">Acessar pack</a>
+            <a class="btn btn-primary small js-curso-link" data-curso="Motion Flyer Pro Pack" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/ohfemTd">Acessar pack</a>
           </div>
         </div>
       </article>
@@ -535,6 +535,21 @@ track.addEventListener("mouseleave", () => {
       track.scrollBy({left:330, behavior:"smooth"});
     }
   }, 4200);
+});
+
+/* Rastreamento dos cliques nos 3 cursos
+   - O Pixel base registra PageView.
+   - A Kiwify registra InitiateCheckout/Purchase no checkout.
+   - Aqui registramos apenas qual curso foi clicado, sem duplicar InitiateCheckout.
+*/
+document.querySelectorAll(".js-curso-link").forEach(link => {
+  link.addEventListener("click", () => {
+    if (typeof fbq === "function") {
+      fbq("trackCustom", "CursoClique", {
+        curso: link.dataset.curso
+      });
+    }
+  });
 });
 
 /* Modal do YouTube */
