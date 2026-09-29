@@ -143,6 +143,40 @@ h2{font-size:clamp(2.1rem,4vw,3.6rem);letter-spacing:-.055em;margin-top:9px}
 .badge{position:absolute;top:15px;left:15px;padding:7px 10px;border-radius:999px;background:rgba(7,7,11,.72);backdrop-filter:blur(10px);border:1px solid var(--line);font-size:.72rem;font-weight:850;text-transform:uppercase}
 .card-body{padding:24px;display:flex;flex:1;flex-direction:column}
 .card h3{font-size:1.45rem;margin-bottom:10px}
+.price-box{
+  margin-top:16px;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.price-old{
+  color:#858594;
+  font-size:.86rem;
+  text-decoration:line-through;
+}
+.price-current{
+  font-size:1.55rem;
+  font-weight:950;
+  letter-spacing:-.03em;
+  background:linear-gradient(100deg,#fff,#c69cff,#6eeaff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.price-current span{
+  font-size:.82rem;
+  font-weight:750;
+  color:#aaaaba;
+  background:none;
+  -webkit-text-fill-color:#aaaaba;
+}
+.price-access{
+  color:#39e58c;
+  font-size:.78rem;
+  font-weight:800;
+  margin-top:1px;
+}
+
 .card p{color:var(--muted);line-height:1.65;font-size:.95rem;flex:1}
 .card-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
 .small{padding:12px 10px;font-size:.88rem}
@@ -321,7 +355,12 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
         </div>
         <div class="card-body">
           <h3>Master Motion Flyers</h3>
-          <p>Aprenda a criar Motion Flyers profissionais para eventos, lançamentos de músicas e divulgação de artistas. <strong>Acesso vitalício.</strong></p>
+          <p>Aprenda a criar Motion Flyers profissionais para eventos, lançamentos de músicas e divulgação de artistas.</p>
+          <div class="price-box">
+            <span class="price-old">De R$ 527,00</span>
+            <strong class="price-current">R$ 147,00 <span>à vista</span></strong>
+            <span class="price-access">✓ Acesso vitalício</span>
+          </div>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
             <a class="btn btn-primary small js-curso-link" data-curso="Master Motion Flyers" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/yzulT7F">Quero entrar</a>
@@ -337,7 +376,12 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
         </div>
         <div class="card-body">
           <h3>Mago Stream Motion</h3>
-          <p>Domine overlays, telas de início, cenas e pacotes de animação para streamers e criadores de conteúdo. <strong>Acesso vitalício.</strong></p>
+          <p>Domine overlays, telas de início, cenas e pacotes de animação para streamers e criadores de conteúdo.</p>
+          <div class="price-box">
+            <span class="price-old">De R$ 150,00</span>
+            <strong class="price-current">R$ 57,00 <span>à vista</span></strong>
+            <span class="price-access">✓ Acesso vitalício</span>
+          </div>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
             <a class="btn btn-primary small js-curso-link" data-curso="Mago Stream Motion" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/4E31Dej">Quero entrar</a>
@@ -353,7 +397,12 @@ footer{padding:45px 0 55px;border-top:1px solid var(--line);color:#777;font-size
         </div>
         <div class="card-body">
           <h3>Motion Flyer Pro Pack</h3>
-          <p>Acelere seu fluxo de trabalho com templates, assets e projetos editáveis para produzir com mais velocidade. <strong>Acesso vitalício.</strong></p>
+          <p>Acelere seu fluxo de trabalho com templates, assets e projetos editáveis para produzir com mais velocidade.</p>
+          <div class="price-box">
+            <span class="price-old">De R$ 120,00</span>
+            <strong class="price-current">R$ 35,00 <span>à vista</span></strong>
+            <span class="price-access">✓ Acesso vitalício</span>
+          </div>
           <div class="card-actions">
             <button class="btn btn-ghost small" data-video>▶ Ver por dentro</button>
             <a class="btn btn-primary small js-curso-link" data-curso="Motion Flyer Pro Pack" target="_blank" rel="noopener" href="https://pay.kiwify.com.br/ohfemTd">Acessar pack</a>
